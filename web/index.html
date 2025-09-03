@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <!-- SEO الأساسي -->
+  <title>Ahmed Shaban | Web Developer & Portfolio</title>
+  <meta name="description" content="أنا أحمد شعبان، مطور مواقع وتطبيقات. هنا تجد أعمالي، مشاريعي، وخدماتي.">
+  <meta name="keywords" content="Ahmed Shaban, web developer, portfolio, flutter, personal website, مطور مواقع, أعمال, مشاريع">
+  <meta name="author" content="Ahmed Shaban">
+
+  <!-- Open Graph (عشان المشاركة على السوشيال) -->
+  <meta property="og:title" content="Ahmed Shaban | Portfolio">
+  <meta property="og:description" content="مرحباً! أنا أحمد شعبان، مطور مواقع وتطبيقات. تصفح أعمالي ومشاريعي.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ahmedshaban.com">
+  <meta property="og:image" content="icons/preview.png"> <!-- صورة تظهر عند المشاركة -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ahmed Shaban | Portfolio">
+  <meta name="twitter:description" content="مرحباً! أنا أحمد شعبان، مطور مواقع وتطبيقات. تصفح أعمالي ومشاريعي.">
+  <meta name="twitter:image" content="icons/preview.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icons/icon192.png"/>
+  <link rel="apple-touch-icon" href="icons/icon192.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Schema.org (معلومات منظمة لـ Google) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ahmed Shaban",
+      "url": "https://ahmedshaban.com",
+      "image": "https://ahmedshaban.com/icons/preview.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/ahmedshaban",
+        "https://github.com/ahmedshaban",
+        "https://twitter.com/ahmedshaban"
+      ],
+      "jobTitle": "Flutter Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelancer"
+      }
+    }
+  </script>
+
+  <!-- تحسين السرعة -->
+  <link rel="preload" as="image" href="icons/icon192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+  <!-- Loader Styles -->
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+    }
+    #loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+  </style>
+
+  <!-- Lottie -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+</head>
+<body>
+<!-- Loader -->
+<div id="loader"></div>
+
+<!-- Flutter App -->
+<script src="flutter_bootstrap.js" async></script>
+
+<script>
+  // تحميل أنيميشن
+  var animation = lottie.loadAnimation({
+    container: document.getElementById('loader'),
+    renderer: 'svg',
+    loop: false,
+    autoplay: true,
+    path: 'Welcome.json'
+  });
+
+  // إخفاء اللودر بعد أول Frame
+  window.addEventListener('flutter-first-frame', function() {
+    const loader = document.getElementById('loader');
+    loader.style.transition = 'opacity 0.5s';
+    loader.style.opacity = 0;
+    setTimeout(() => loader.style.display = 'none', 500);
+  });
+</script>
+</body>
+</html>
